@@ -7,4 +7,4 @@
 2. Parse input string according to the type of exec* (for ex, see "man execlp").
    a) if execvp is used, string splitting into "path" and "args" is all you need.
 3. Collect exit codes via waitpid/WEXITSTATUS.
-4. Note that the size of command can reach a lot of kbytes: type "getconf ARG_MAX" cmd to check it.
+4. Note that a size of command can reach a lot of kbytes: type "getconf ARG_MAX" cmd to check it.
