@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 int main()
 {
@@ -24,12 +25,14 @@ int main()
       buf[size] = 0; // the text string data is expected
       write(fd[1], buf, size);
       printf("Send: %s\n", buf);
+    }
   }
   else {
     close(fd[1]);
     while((size = read(fd[0], buf, sizeof(buf)-1)) > 0) {
       buf[size] = '\0'; // the text string data is expected
       printf("Received from parent: %s\n", buf);
+    }
   }
   
   return 0;
